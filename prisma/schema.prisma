@@ -4,13 +4,13 @@ generator client {
 
 datasource db {
   provider = "postgresql"
-  url      = env("postgresql://pandey@localhost:5432/ai-chat-bot")
+  url      = env("postgresql://pandey:pandey@localhost:5432/postgres")
 }
 
 model Image {
   id          String   @id @default(uuid())
   url         String
   description String
-  embedding   Vector   @db.Vector(384)
+  embedding   Bytes
   createdAt   DateTime @default(now())
 }

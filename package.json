@@ -5,7 +5,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "backend": "uvicorn backend.caption_embed_server:app --reload --host 0.0.0.0 --port 8000"
+    "backend": "uvicorn backend.caption_embed_server:app --reload --host 0.0.0.0 --port 8000",
+    "postinstall": "prisma generate"
   },
   "dependencies": {
     "@prisma/client": "^4.16.2",
