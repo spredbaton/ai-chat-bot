@@ -1,0 +1,16 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("postgresql://pandey@localhost:5432/ai-chat-bot")
+}
+
+model Image {
+  id          String   @id @default(uuid())
+  url         String
+  description String
+  embedding   Vector   @db.Vector(384)
+  createdAt   DateTime @default(now())
+}
